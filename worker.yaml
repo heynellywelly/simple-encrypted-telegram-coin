@@ -1,0 +1,15 @@
+service: worker
+api_version: 1
+runtime: python27
+threadsafe: yes
+manual_scaling:
+  instances: 1
+
+handlers:
+- url: /blockchain_miner
+  script: miner.app
+  login: admin
+
+env_variables:
+  BLOCK_GEN_INTERVAL: 10
+  DIFFICULTY_ADJ_INTERVAL: 10 
